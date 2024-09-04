@@ -1,23 +1,30 @@
 # Plan de la conférence : "FPGA et Rétro Gaming : Préserver le Passé avec Précision"
 
 ## 1. Introduction et Objectifs de la Conférence (2 minutes)
-- Présentation des intervenants : Matt (modérateur), Pierco (développeur de cores FPGA), et Lars (utilisateur Mister FPGA).
-- Brève introduction au sujet : la préservation du rétro gaming via FPGA.
+- **Présentation des intervenants** :
+  - Matt (modérateur) : Développeur logiciel et utilisateur expérimenté du Mister FPGA.
+  - Pierco (développeur de cores FPGA) : Contributeur actif au projet Mister FPGA, notamment avec le développement de cores comme celui de Q*bert.
+  - Lars (utilisateur du Mister FPGA) : Utilisateur final, passionné de rétro gaming, qui apportera son point de vue d’utilisateur.
+
+- **Introduction générale** :
+  La conférence explore comment le FPGA est utilisé pour la préservation du rétro gaming. Nous allons comparer l'approche FPGA à l'émulation logicielle, expliquer le processus de développement d'un core sur FPGA, et discuter des avantages pour les utilisateurs finaux, avec un focus particulier sur le Mister FPGA. L'objectif est de montrer comment le FPGA peut fournir une expérience de jeu fidèle et authentique, proche des consoles et machines d'origine.
 
 ## 2. Lexique et Concepts Clés du FPGA (5 minutes)
 - **Lexique des termes essentiels** :
-  - **FPGA (Field-Programmable Gate Array)** : Un circuit intégré reprogrammable qui permet de recréer le fonctionnement de divers hardwares.
-  - **Core** : Réplique d'une machine ou d'un système (console, arcade) implémentée sur un FPGA.
-  - **ROM** : Le code immuable d'un jeu ou d'une application.
-  - **BRAM (Block RAM)** : Mémoire rapide intégrée dans les FPGA, utilisée pour remplacer les mémoires statiques.
-  - **DSP Blocks (Digital Signal Processing)** : Blocs mathématiques utilisés pour traiter des calculs spécifiques, utiles mais pas centraux dans les cores FPGA.
+  - **FPGA (Field-Programmable Gate Array)** : Un circuit intégré programmable qui permet de recréer fidèlement le comportement d'un hardware spécifique (comme une console ou une machine d'arcade).
+  - **Core** : Un module FPGA qui émule une machine ou un système spécifique (ex. : un core pour une console ou un jeu d'arcade).
+  - **ROM** : Le fichier contenant les données originales du jeu ou de l’application, qui est injecté dans le core pour être exécuté par le FPGA.
+  - **BRAM (Block RAM)** : Une mémoire rapide intégrée dans les FPGA, utilisée pour stocker des données temporaires. Elle est limitée en taille, mais essentielle pour certains types d’implémentations matérielles.
+  - **DSP Blocks (Digital Signal Processing)** : Blocs de calcul dédiés à des opérations mathématiques spécifiques, notamment dans le traitement de signaux numériques. Ils aident à optimiser le fonctionnement de certains cores, mais ne sont pas centraux dans le développement des cores FPGA pour le rétro gaming.
+
+- **Importance des termes pour la conférence** :
+  Ce lexique est essentiel pour aligner le vocabulaire entre les différents intervenants et l'audience, afin d’éviter toute confusion pendant la présentation. Les termes comme "core" et "FPGA" seront fréquemment utilisés pour expliquer les processus de développement et de portage des systèmes sur Mister FPGA.
 
 ## 3. FPGA vs Émulation Logicielle : Deux approches, Deux visions (15 minutes)
 
 ### - **Émulation Logicielle : Une approche orientée utilisateur** :
   - **Explication du concept** :
     L’émulation logicielle se concentre sur la **reproduction du résultat final** perçu par l’utilisateur. Le développeur d’un émulateur ne cherche pas nécessairement à recréer le hardware, mais plutôt à s'assurer que le jeu ou le système **fonctionne visuellement et auditivement de la même manière** que l'original, du point de vue de l’utilisateur.
-  
   - **Processus de développement** :
     Le développeur d'émulation logicielle commence par analyser **le rendu final** (graphismes, sons, interactions) et cherche à les reproduire à travers un logiciel moderne, quel que soit le hardware sous-jacent. Cela signifie qu’il peut :
     - Interpréter et traduire les commandes du jeu ou du système en utilisant les capacités du CPU moderne (ordinateur ou Raspberry Pi).
@@ -54,9 +61,16 @@
     - L'expérience utilisateur est donc **parfaitement fidèle** au système original, car tout est répliqué à un niveau matériel.
 
 ## 4. Aspects pratiques : Setup et coûts des solutions FPGA (5 minutes)
-- **Complexité du setup** : Mister FPGA vs solutions propriétaires.
-- **Coût d'entrée** : Comparaison des coûts entre FPGA et émulateurs logiciels.
-- **Public cible** : Pour les passionnés de hardware et les utilisateurs exigeants.
+- **Complexité du setup** :
+  - Les solutions basées sur **Mister FPGA** sont principalement des projets "Do it yourself", nécessitant une certaine expertise technique pour assembler les différentes pièces et installer les cores. 
+  - En revanche, des solutions propriétaires comme **Analogue** offrent une expérience **plug-and-play**, sans nécessité de configuration complexe, mais souvent à un prix plus élevé.
+  
+- **Coût d'entrée** :
+  - Le coût d'un setup FPGA (comme Mister FPGA) est généralement plus élevé que celui des solutions d’émulation logicielle (ex. : Raspberry Pi). Cela est dû à la nature du matériel FPGA, qui est conçu pour la flexibilité et la précision.
+  - Un utilisateur doit être prêt à investir plus, tant en termes de temps qu’en termes d’argent, pour bénéficier d'une expérience de jeu **fidèle à l'original**.
+
+- **Public cible** :
+  - Les solutions FPGA, notamment Mister, sont destinées aux **utilisateurs exigeants** et passionnés par la fidélité du hardware original. Ces utilisateurs cherchent à retrouver une expérience identique à celle d'une console ou d'une machine d'arcade originale, sans compromis sur la latence ou la précision du rendu.
 
 ## 5. Processus de développement d'un Core FPGA - Exemple de Q*bert (15 minutes)
 
@@ -87,11 +101,18 @@
 
 ## 6. Perspective de l'utilisateur final (10 minutes)
 - **Expérience utilisateur du Mister FPGA** :
-  - Lars partagera son expérience utilisateur.
-  
-- **Pourquoi choisir le Mister FPGA ?**
+  - Lars, en tant qu’utilisateur final, partagera son expérience avec le Mister FPGA. Il expliquera comment le Mister se compare aux autres solutions d’émulation logicielle en termes de fidélité, de latence, et d’expérience de jeu.
+  - Lars soulignera aussi l'importance de la communauté Mister et la diversité des cores disponibles, offrant une grande variété de systèmes et jeux rétro, jouables avec une précision et une authenticité sans égal.
+
+- **Pourquoi choisir le Mister FPGA ?** :
+  - Lars évoquera les avantages du Mister FPGA par rapport à d'autres solutions : 
+    - La reproduction fidèle du hardware original, ce qui permet une expérience de jeu authentique.
+    - La flexibilité de la plateforme, avec des cores pour une large gamme de consoles et de systèmes d'arcade.
+    - Le fait que le Mister FPGA est un projet open-source, avec une communauté active et des mises à jour régulières.
+    - Le fait que la plateforme soit roboste en termes de software lifecycle
 
 ## 7. Session de Questions-Réponses (10+ minutes)
 - **Modération par Matt** :
-  - Interaction avec le public.
-  - Clarification des points abordés et approfondissement des sujets d'intérêt.
+  - Matt animera la session de questions-réponses en interagissant avec le public.
+  - Les questions peuvent porter sur les aspects techniques du développement FPGA, les différences avec l'émulation logicielle, ou des sujets spécifiques comme le core Q*bert.
+  - Pierco et Lars répondront aux questions du public, et Matt veillera à ce que tous les aspects de la présentation soient bien compris et explorés davantage si nécessaire.
