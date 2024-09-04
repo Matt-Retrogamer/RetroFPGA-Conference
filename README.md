@@ -25,6 +25,7 @@
 ### - **Émulation Logicielle : Une approche orientée utilisateur** :
   - **Explication du concept** :
     L’émulation logicielle se concentre sur la **reproduction du résultat final** perçu par l’utilisateur. Le développeur d’un émulateur ne cherche pas nécessairement à recréer le hardware, mais plutôt à s'assurer que le jeu ou le système **fonctionne visuellement et auditivement de la même manière** que l'original, du point de vue de l’utilisateur.
+  
   - **Processus de développement** :
     Le développeur d'émulation logicielle commence par analyser **le rendu final** (graphismes, sons, interactions) et cherche à les reproduire à travers un logiciel moderne, quel que soit le hardware sous-jacent. Cela signifie qu’il peut :
     - Interpréter et traduire les commandes du jeu ou du système en utilisant les capacités du CPU moderne (ordinateur ou Raspberry Pi).
@@ -33,11 +34,6 @@
 
   - **Exemple d'un émulateur logiciel** :
     Prenons un émulateur Super Nintendo : le développeur va s'assurer que le jeu se charge correctement, que les graphiques et les sons sont fidèles à l’original, et que les inputs du contrôleur réagissent comme attendu. Il ne reproduit pas nécessairement **chaque circuit spécifique** de la SNES, mais cherche à obtenir le **même effet final**.
-
-  - **Différences avec le FPGA** :
-    - Contrairement au FPGA, où le développeur **reproduit chaque composant matériel** (souvent sans voir le jeu jusqu’à ce que tous les éléments soient en place), l'émulateur logiciel est davantage une approximation, où le développeur a souvent besoin de **tester visuellement le résultat à chaque étape**.
-    - Le focus est mis sur **l'expérience utilisateur**, pas sur le hardware. L’objectif est de faire en sorte que le jeu tourne sur un ordinateur ou une autre machine moderne, peu importe si le code sous-jacent fonctionne de manière identique au hardware original.
-    - **Performance** : L'émulation logicielle peut ajouter des **décalages** (input lag) ou nécessiter des compromis pour fonctionner sur du matériel moderne moins puissant.
 
 ### - **FPGA : Une approche orientée hardware** :
   - **Explication du concept** :
@@ -54,11 +50,19 @@
   
   - **Exemple d'un Core FPGA** :
     Prenons l'exemple de Q*bert. Le développeur du core FPGA recrée chaque composant du jeu d'arcade (processeur, circuits graphiques, etc.) en suivant la structure exacte du hardware original. Ce n’est qu’une fois le core terminé qu’il injecte la ROM du jeu et découvre enfin le rendu final, souvent pour la première fois, même s’il n’avait pas d’intérêt initial pour le jeu en lui-même.
+
+### - **Différences entre l’émulation logicielle et le FPGA** :
+  - **Approche matérielle vs approche logicielle** :
+    - L'émulation logicielle se concentre sur la reproduction du **résultat final** (graphismes, sons), tandis que le FPGA tente de reproduire fidèlement **chaque composant du hardware** original. L’approche FPGA est donc une reproduction idéalement exacte au niveau matériel (cycle accurate), tandis que l’émulation peut être une approximation.
   
-  - **Différences avec l’émulation logicielle** :
-    - Contrairement à l’émulation, l’approche FPGA consiste à recréer le **hardware à l’identique**, pas seulement les effets visuels et sonores.
-    - Le développeur FPGA ne teste pas les graphismes ou le son avant d’avoir fini la recréation du hardware complet.
-    - L'expérience utilisateur est donc **parfaitement fidèle** au système original, car tout est répliqué à un niveau matériel.
+  - **Test et validation** :
+    - Le développeur d'émulateur logiciel teste régulièrement le résultat visuel et sonore au cours du développement pour s'assurer que tout fonctionne correctement. En revanche, le développeur FPGA se concentre sur la reproduction du hardware et ne teste le résultat final qu'une fois que tous les composants matériels minimum sont recréés.
+
+  - **Fidélité et performance** :
+    - L’approche FPGA vise à offir une expérience utilisateur **parfaitement fidèle** à celle d’un système d’origine, car il reproduit, idéalement, le hardware à l’identique, sans compromis. L’émulation logicielle, quant à elle, peut entraîner des **latences** ou des imperfections dues à la différence entre le hardware d'origine et la plateforme moderne sur laquelle elle tourne (ex. : input lag, différences dans les timings).
+  
+  - **Complexité de développement** :
+    - Le développement FPGA est plus **technique** et nécessite une compréhension détaillée du hardware original, tandis que l’émulation logicielle permet d’adapter plus facilement les jeux à différentes plateformes.
 
 ## 4. Aspects pratiques : Setup et coûts des solutions FPGA (5 minutes)
 - **Complexité du setup** :
@@ -109,7 +113,7 @@
     - La reproduction fidèle du hardware original, ce qui permet une expérience de jeu authentique.
     - La flexibilité de la plateforme, avec des cores pour une large gamme de consoles et de systèmes d'arcade.
     - Le fait que le Mister FPGA est un projet open-source, avec une communauté active et des mises à jour régulières.
-    - Le fait que la plateforme soit roboste en termes de software lifecycle
+    - Le fait que la plateforme soit robuste en termes de software lifecycle.
 
 ## 7. Session de Questions-Réponses (10+ minutes)
 - **Modération par Matt** :
