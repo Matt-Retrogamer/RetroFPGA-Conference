@@ -59,12 +59,31 @@
 - **Public cible** : Pour les passionnés de hardware et les utilisateurs exigeants.
 
 ## 5. Processus de développement d'un Core FPGA - Exemple de Q*bert (15 minutes)
-- **Introduction** : Pourquoi Q*bert est un excellent exemple pour illustrer le développement d'un core FPGA.
-- **Étapes du développement (avec exemple Q*bert)** :
-  - Pierco présentera une capture d'écran du schéma de Q*bert sans entrer dans les détails complexes.
-  - **BRAM et DSP blocks** (mention rapide) : Bien que la BRAM (700Ko dans le Cyclone V) et les DSP blocks soient utiles pour optimiser certains calculs et mémoires, ils ne sont pas centraux dans ce core, mais peuvent aider à mieux gérer les ressources matérielles disponibles.
 
-- **Challenges et réussites** : Discussion sur les défis rencontrés, notamment l'optimisation avec des ressources limitées comme la BRAM.
+### Étapes du développement :
+1. **Choix du Core** :
+   - Pierco commence par choisir le core à développer. Par exemple, pour Q*bert, il s’agit de recréer fidèlement le jeu d'arcade. Ce choix peut être motivé par la disponibilité des ressources techniques (documentation, schémas) ou par l'importance du jeu dans l'histoire du rétro gaming.
+
+2. **Recherche de matériel (documentation, schémas électroniques, PCB)** :
+   - Cette étape est cruciale pour comprendre comment le hardware d'origine fonctionne. Pierco recherche des **datasheets**, des **schémas électroniques**, et parfois même des images ou des scans des **PCB** (cartes de circuit imprimé) du système original. Cela permet de comprendre comment les différents composants du jeu interagissent.
+
+3. **Recherche des composants HDL** :
+   - Il s’agit de trouver les descriptions matérielles (**HDL**, Hardware Description Language) des différents composants du système. Par exemple :
+     - **Cores de CPU** : Trouver ou reproduire le core du processeur utilisé dans la machine originale.
+     - **Composants custom** : Recherche ou création de composants spécifiques utilisés dans le système (ex. : circuits logiques, contrôleurs).
+     - **Dumps de PLD/PAL** : Obtenir les dumps des composants logiques programmables comme les **PLD** (Programmable Logic Devices) ou **PAL** (Programmable Array Logic), qui peuvent être utilisés dans le hardware original.
+
+4. **Simulation (Verilator, Modelsim, Icarus, etc.)** :
+   - Avant de porter le core sur le FPGA, Pierco utilise des outils de simulation pour tester le comportement des composants logiques. Des logiciels comme **Verilator**, **Modelsim** ou **Icarus** permettent de simuler le fonctionnement du hardware à un niveau logiciel afin de détecter d’éventuelles erreurs.
+
+5. **Portage sur MiSTer** :
+   - Une fois les tests de simulation effectués, Pierco porte le core sur la plateforme **MiSTer FPGA**. C’est ici que le hardware est réellement implémenté sur le FPGA, et que le système commence à prendre forme en reproduisant les composants originaux.
+
+6. **Debuggage (Signal Tap)** :
+   - Le core est ensuite débuggé pour vérifier que tous les éléments fonctionnent correctement. Des outils comme **Signal Tap** (un analyseur logique) sont utilisés pour examiner en profondeur les signaux et détecter les anomalies.
+
+7. **Release** :
+   - Une fois le core testé et débuggé, il est publié pour que la communauté puisse en profiter, en tant que core stable et jouable sur la plateforme Mister FPGA.
 
 ## 6. Perspective de l'utilisateur final (10 minutes)
 - **Expérience utilisateur du Mister FPGA** :
