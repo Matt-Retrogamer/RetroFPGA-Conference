@@ -136,6 +136,8 @@
     - La flexibilité de la plateforme, avec des cores pour une large gamme de consoles et de systèmes d'arcade.
     - Le fait que le Mister FPGA est un projet open-source, avec une communauté active et des mises à jour régulières.
     - Le fait que la plateforme soit robuste en termes de software lifecycle.
+   
+ - **Live démo MiSTer FPGA** ?
 
 ## 7. Session de Questions-Réponses (10+ minutes)
 - **Modération par Matt** :
