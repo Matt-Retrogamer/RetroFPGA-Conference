@@ -52,8 +52,11 @@
 ### - **FPGA : Une approche orientée hardware** :
   - **Explication du concept** :
     Le FPGA vise à reproduire **fidèlement le hardware original** d'une machine de jeu ou d'un système d'arcade, au niveau des composants physiques. Cette approche repose sur la recréation du comportement exact de chaque élément du hardware (comme des processeurs, des circuits logiques et des mémoires), pour que la machine se comporte **comme si elle était l'originale**.
-    
+
     Cependant, bien que le FPGA permette de viser une reproduction exacte (cycle accurate) du hardware, il est également possible de produire des implémentations qui ne sont pas fidèles. Par exemple, certaines machines recréées en FPGA peuvent tourner plus rapidement que les originales ou produire des sons légèrement différents en fonction des limitations ou des optimisations appliquées.
+
+  - **Avantage supplémentaire : Flexibilité des sorties vidéo et audio** :
+    Un des avantages majeurs du FPGA est la **reproduction exacte des signaux vidéo et audio** d’origine. Cela permet d’utiliser à la fois des écrans modernes et des **écrans cathodiques d'époque (CRT)** sans avoir besoin de **traduire ou adapter** les signaux vidéo. Le FPGA permet de reproduire les résolutions et les timings vidéo originaux, et avec une interface adaptée, un joueur peut donc connecter un système FPGA à un CRT pour une expérience encore plus authentique. De même, les signaux audio sont gérés **directement par les cores**, sans traitement ou conversion intermédiaire, assurant une sortie sonore aussi proche que possible du matériel d'origine.
 
   - **Processus de développement** :
     Le développeur FPGA part des **datasheets** et des spécifications techniques du hardware qu’il souhaite reproduire. Il va recréer chaque composant en utilisant des langages de description de matériel, comme le **Verilog** ou le **VHDL**, sans se préoccuper du résultat visuel ou sonore final avant d'avoir tout reconstitué. Ce processus se fait étape par étape :
