@@ -1,5 +1,19 @@
 # Plan de la conférence : "FPGA et Rétro Gaming : Préserver le Passé avec Précision"
 
+![Logo de la Conférence](imgs/SGF.png) <!-- Placeholder pour le logo, remplacer "path/to/logo.png" par le chemin réel du logo -->
+
+## Table des matières
+1. [Introduction et Objectifs de la Conférence](#1-introduction-et-objectifs-de-la-conférence-2-minutes)
+2. [Lexique et Concepts Clés du FPGA](#2-lexique-et-concepts-clés-du-fpga-5-minutes)
+3. [FPGA vs Émulation Logicielle : Deux approches, Deux visions](#3-fpga-vs-émulation-logicielle--deux-approches-deux-visions-15-minutes)
+   - [Émulation Logicielle : Une approche orientée utilisateur](#-émulation-logicielle--une-approche-orientée-utilisateur)
+   - [FPGA : Une approche orientée hardware](#-fpga--une-approche-orientée-hardware)
+   - [Différences entre l’émulation logicielle et le FPGA](#-différences-entre-lémulation-logicielle-et-le-fpga)
+4. [Aspects pratiques : Setup et coûts des solutions FPGA](#4-aspects-pratiques--setup-et-coûts-des-solutions-fpga-5-minutes)
+5. [Processus de développement d'un Core FPGA - Exemple de Q*bert](#5-processus-de-développement-dun-core-fpga--exemple-de-qbert-15-minutes)
+6. [Perspective de l'utilisateur final](#6-perspective-de-lutilisateur-final-10-minutes)
+7. [Session de Questions-Réponses](#7-session-de-questions-réponses-10-minutes)
+
 ## 1. Introduction et Objectifs de la Conférence (2 minutes)
 - **Présentation des intervenants** :
   - Matt (modérateur) : Développeur logiciel et utilisateur expérimenté du Mister FPGA.
