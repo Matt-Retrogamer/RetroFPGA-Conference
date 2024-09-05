@@ -27,12 +27,16 @@
 - **Lexique des termes essentiels** :
   - **FPGA (Field-Programmable Gate Array)** : Un circuit intégré programmable qui permet de recréer fidèlement le comportement d'un hardware spécifique (comme une console ou une machine d'arcade).
   - **Core** : Un module FPGA qui émule une machine ou un système spécifique (ex. : un core pour une console ou un jeu d'arcade).
-  - **ROM** : Le fichier contenant les données originales du jeu ou de l’application, qui est injecté dans le core pour être exécuté par le FPGA.
+  - **ROM** : Le fichier contenant les données originales du jeu ou de l’application, qui est un dump d’une mémoire ROM physique. Il est injecté dans le core pour être exécuté par le FPGA.
+  - **PCB (Printed Circuit Board)** : La carte de circuit imprimé sur laquelle sont montés les composants électroniques d'un système (comme une console ou une machine d'arcade).
+  - **CPU/RAM/ROM** : Composants essentiels d'un système. Le **CPU** traite les instructions, la **RAM** stocke les données temporaires pendant le fonctionnement, et la **ROM** contient les données immuables du système (comme les jeux ou les programmes).
   - **BRAM (Block RAM)** : Une mémoire rapide intégrée dans les FPGA, utilisée pour stocker des données temporaires. Elle est limitée en taille, mais essentielle pour certains types d’implémentations matérielles.
   - **DSP Blocks (Digital Signal Processing)** : Blocs de calcul dédiés à des opérations mathématiques spécifiques, notamment dans le traitement de signaux numériques. Ils aident à optimiser le fonctionnement de certains cores, mais ne sont pas centraux dans le développement des cores FPGA pour le rétro gaming.
+  - **HDL (Hardware Description Language)** : Un langage de description de matériel, comme **Verilog** ou **VHDL**, utilisé pour décrire et modéliser le fonctionnement du hardware dans un FPGA.
+  - **MRA** : Un format de fichier utilisé dans le projet MiSTer pour organiser les ROMs et définir les configurations de cores arcade.
 
 - **Importance des termes pour la conférence** :
-  Ce lexique est essentiel pour aligner le vocabulaire entre les différents intervenants et l'audience, afin d’éviter toute confusion pendant la présentation. Les termes comme "core" et "FPGA" seront fréquemment utilisés pour expliquer les processus de développement et de portage des systèmes sur Mister FPGA.
+  Ce lexique est essentiel pour aligner le vocabulaire entre les différents intervenants et l'audience, afin d’éviter toute confusion pendant la présentation. Les termes comme "core", "FPGA", "HDL" et "ROM" seront fréquemment utilisés pour expliquer les processus de développement et de portage des systèmes sur Mister FPGA.
 
 ## 3. FPGA vs Émulation Logicielle : Deux approches, Deux visions (15 minutes)
 
