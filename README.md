@@ -33,7 +33,7 @@
   - **BRAM (Block RAM)** : Une mémoire rapide intégrée dans les FPGA, utilisée pour stocker des données temporaires. Elle est limitée en taille, mais essentielle pour certains types d’implémentations matérielles.
   - **DSP Blocks (Digital Signal Processing)** : Blocs de calcul dédiés à des opérations mathématiques spécifiques, notamment dans le traitement de signaux numériques. Ils aident à optimiser le fonctionnement de certains cores, mais ne sont pas centraux dans le développement des cores FPGA pour le rétro gaming.
   - **HDL (Hardware Description Language)** : Un langage de description de matériel, comme **Verilog** ou **VHDL**, utilisé pour décrire et modéliser le fonctionnement du hardware dans un FPGA.
-  - **MRA** : Un format de fichier utilisé dans le projet MiSTer pour organiser les ROMs et définir les configurations de cores arcade.
+  - **MRA (MAME ROM Assignment)** : Un format de fichier utilisé dans le projet MiSTer pour organiser les ROMs et définir les configurations de cores arcade.
 
 - **Importance des termes pour la conférence** :
   Ce lexique est essentiel pour aligner le vocabulaire entre les différents intervenants et l'audience, afin d’éviter toute confusion pendant la présentation. Les termes comme "core", "FPGA", "HDL" et "ROM" seront fréquemment utilisés pour expliquer les processus de développement et de portage des systèmes sur Mister FPGA.
