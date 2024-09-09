@@ -9,10 +9,9 @@
    - [Émulation Logicielle : Une approche orientée utilisateur](#-émulation-logicielle--une-approche-orientée-utilisateur)
    - [FPGA : Une approche orientée hardware](#-fpga--une-approche-orientée-hardware)
    - [Différences entre l’émulation logicielle et le FPGA](#-différences-entre-lémulation-logicielle-et-le-fpga)
-4. [Aspects pratiques : Setup et coûts des solutions FPGA](#4-aspects-pratiques--setup-et-coûts-des-solutions-fpga-5-minutes)
-5. [Processus de développement d'un Core FPGA - Exemple de Q*bert](#5-processus-de-développement-dun-core-fpga--exemple-de-qbert-15-minutes)
-6. [Perspective de l'utilisateur final](#6-perspective-de-lutilisateur-final-10-minutes)
-7. [Session de Questions-Réponses](#7-session-de-questions-réponses-10-minutes)
+4. [Processus de développement d'un Core FPGA - Exemple de Q*bert](#4-processus-de-développement-dun-core-fpga--exemple-de-qbert-15-minutes)
+5. [Aspects pratiques et Perspective de l'utilisateur final](#5-aspects-pratiques-et-perspective-de-lutilisateur-final-15-minutes)
+6. [Session de Questions-Réponses](#6-session-de-questions-réponses-10-minutes)
 
 ## 1. Introduction et Objectifs de la Conférence (2 minutes)
 - **Présentation des intervenants** :
@@ -90,19 +89,7 @@
   - **Complexité de développement** :
     - Le développement FPGA est plus **technique** et nécessite une compréhension détaillée du hardware original, tandis que l’émulation logicielle permet d’adapter plus facilement les jeux à différentes plateformes.
 
-## 4. Aspects pratiques : Setup et coûts des solutions FPGA (5 minutes)
-- **Complexité du setup** :
-  - Les solutions basées sur **Mister FPGA** sont principalement des projets "Do it yourself", nécessitant une certaine expertise technique pour assembler les différentes pièces et installer les cores. 
-  - En revanche, des solutions propriétaires comme **Analogue** offrent une expérience **plug-and-play**, sans nécessité de configuration complexe, mais souvent à un prix plus élevé.
-  
-- **Coût d'entrée** :
-  - Le coût d'un setup FPGA (comme Mister FPGA) est généralement plus élevé que celui des solutions d’émulation logicielle (ex. : Raspberry Pi). Cela est dû à la nature du matériel FPGA, qui est conçu pour la flexibilité et la précision.
-  - Un utilisateur doit être prêt à investir plus, tant en termes de temps qu’en termes d’argent, pour bénéficier d'une expérience de jeu **fidèle à l'original**.
-
-- **Public cible** :
-  - Les solutions FPGA, notamment Mister, sont destinées aux **utilisateurs exigeants** et passionnés par la fidélité du hardware original. Ces utilisateurs cherchent à retrouver une expérience identique à celle d'une console ou d'une machine d'arcade originale, sans compromis sur la latence ou la précision du rendu.
-
-## 5. Processus de développement d'un Core FPGA - Exemple de Q*bert (15 minutes)
+## 4. Processus de développement d'un Core FPGA - Exemple de Q*bert (15 minutes)
 
 ### Étapes du développement :
 1. **Choix du Core** :
@@ -129,21 +116,33 @@
 7. **Release** :
    - Une fois le core testé et débuggé, il est publié pour que la communauté puisse en profiter, en tant que core stable et jouable sur la plateforme Mister FPGA.
 
-## 6. Perspective de l'utilisateur final (10 minutes)
-- **Expérience utilisateur du Mister FPGA** :
+## 5. Aspects pratiques et Perspective de l'utilisateur final (15 minutes)
+
+### **Complexité du setup** :
+  - Les solutions basées sur **Mister FPGA** sont principalement des projets "Do it yourself", nécessitant une certaine expertise technique pour assembler les différentes pièces et installer les cores. 
+  - En revanche, des solutions propriétaires comme **Analogue** offrent une expérience **plug-and-play**, sans nécessité de configuration complexe, mais souvent à un prix plus élevé.
+
+### **Coût d'entrée** :
+  - Le coût d'un setup FPGA (comme Mister FPGA) est généralement plus élevé que celui des solutions d’émulation logicielle (ex. : Raspberry Pi). Cela est dû à la nature du matériel FPGA, qui est conçu pour la flexibilité et la précision.
+  - Un utilisateur doit être prêt à investir plus, tant en termes de temps qu’en termes d’argent, pour bénéficier d'une expérience de jeu **fidèle à l'original**.
+
+### **Public cible** :
+  - Les solutions FPGA, notamment Mister, sont destinées aux **utilisateurs exigeants** et passionnés par la fidélité du hardware original. Ces utilisateurs cherchent à retrouver une expérience identique à celle d'une console ou d'une machine d'arcade originale, sans compromis sur la latence ou la précision du rendu.
+
+### **Expérience utilisateur du Mister FPGA** :
   - Lars, en tant qu’utilisateur final, partagera son expérience avec le Mister FPGA. Il expliquera comment le Mister se compare aux autres solutions d’émulation logicielle en termes de fidélité, de latence, et d’expérience de jeu.
   - Lars soulignera aussi l'importance de la communauté Mister et la diversité des cores disponibles, offrant une grande variété de systèmes et jeux rétro, jouables avec une précision et une authenticité sans égal.
 
-- **Pourquoi choisir le Mister FPGA ?** :
+### **Pourquoi choisir le Mister FPGA ?** :
   - Lars évoquera les avantages du Mister FPGA par rapport à d'autres solutions : 
     - La reproduction fidèle du hardware original, ce qui permet une expérience de jeu authentique.
     - La flexibilité de la plateforme, avec des cores pour une large gamme de consoles et de systèmes d'arcade.
     - Le fait que le Mister FPGA est un projet open-source, avec une communauté active et des mises à jour régulières.
     - Le fait que la plateforme soit robuste en termes de software lifecycle.
    
- - **Live démo MiSTer FPGA** ?
+### **Live démo MiSTer FPGA (en démarrant les questions)**
 
-## 7. Session de Questions-Réponses (10+ minutes)
+## 6. Session de Questions-Réponses (10+ minutes)
 - **Modération par Matt** :
   - Matt animera la session de questions-réponses en interagissant avec le public.
   - Les questions peuvent porter sur les aspects techniques du développement FPGA, les différences avec l'émulation logicielle, ou des sujets spécifiques comme le core Q*bert.
