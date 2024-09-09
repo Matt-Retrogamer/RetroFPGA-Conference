@@ -116,7 +116,7 @@
 7. **Release** :
    - Une fois le core testé et débuggé, il est publié pour que la communauté puisse en profiter, en tant que core stable et jouable sur la plateforme Mister FPGA.
 
-## 5. Aspects pratiques et Perspective de l'utilisateur final (15 minutes)
+## 5. Aspects pratiques et Perspective de l'utilisateur final (10 minutes)
 
 ### **Complexité du setup** :
   - Les solutions basées sur **Mister FPGA** sont principalement des projets "Do it yourself", nécessitant une certaine expertise technique pour assembler les différentes pièces et installer les cores. 
