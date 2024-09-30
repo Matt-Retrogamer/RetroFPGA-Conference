@@ -132,6 +132,7 @@
 ### **Expérience utilisateur du Mister FPGA** :
   - Lars, en tant qu’utilisateur final, partagera son expérience avec le Mister FPGA. Il expliquera comment le Mister se compare aux autres solutions d’émulation logicielle en termes de fidélité, de latence, et d’expérience de jeu.
   - Lars soulignera aussi l'importance de la communauté Mister et la diversité des cores disponibles, offrant une grande variété de systèmes et jeux rétro, jouables avec une précision et une authenticité sans égal.
+  - Biggy parlera de son expérience en tant qu'utilisateur arcade, où la fidélité vs le hardware d'origine prend une grande importance notamment pour la compétition sur les jeux de combat et les shoot em up.
 
 ### **Pourquoi choisir le Mister FPGA ?** :
   - Lars évoquera les avantages du Mister FPGA par rapport à d'autres solutions : 
