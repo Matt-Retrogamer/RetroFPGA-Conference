@@ -1,6 +1,6 @@
 # Plan de la conférence : "FPGA et Rétro Gaming : Préserver le Passé avec Précision"
 
-![Logo de la Conférence](imgs/SGF.png) <!-- Placeholder pour le logo, remplacer "path/to/logo.png" par le chemin réel du logo -->
+![Logo de la Conférence](imgs/SGF.png)
 
 ## Table des matières
 1. [Introduction et Objectifs de la Conférence](#1-introduction-et-objectifs-de-la-conférence-2-minutes)
@@ -18,11 +18,12 @@
   - Matt (modérateur) : Développeur logiciel et utilisateur expérimenté du Mister FPGA.
   - Pierco (développeur de cores FPGA) : Contributeur actif au projet Mister FPGA, notamment avec le développement de cores comme celui de Q*bert.
   - Lars (utilisateur du Mister FPGA) : Utilisateur final, passionné de rétro gaming, qui apportera son point de vue d’utilisateur.
+  - Biggie (de la chaîne YouTube Bigkam Gaming) : Passionné d’arcade, il partagera son expérience de l'utilisation du Mister FPGA dans le monde de l'arcade, en se concentrant sur la connectivité, la fiabilité et la qualité pour les jeux compétitifs.
 
 - **Introduction générale** :
   La conférence explore comment le FPGA est utilisé pour la préservation du rétro gaming. Nous allons comparer l'approche FPGA à l'émulation logicielle, expliquer le processus de développement d'un core sur FPGA, et discuter des avantages pour les utilisateurs finaux, avec un focus particulier sur le Mister FPGA. L'objectif est de montrer comment le FPGA peut fournir une expérience de jeu fidèle et authentique, proche des consoles et machines d'origine.
 
-## 2. Lexique et Concepts Clés du FPGA (5 minutes)
+## 2. Lexique et Concepts Clés du FPGA (3 minutes)
 - **Lexique des termes essentiels** :
   - **FPGA (Field-Programmable Gate Array)** : Un circuit intégré programmable qui permet de recréer fidèlement le comportement d'un hardware spécifique (comme une console ou une machine d'arcade).
   - **Core** : Un module FPGA qui émule une machine ou un système spécifique (ex. : un core pour une console ou un jeu d'arcade).
@@ -116,7 +117,7 @@
 7. **Release** :
    - Une fois le core testé et débuggé, il est publié pour que la communauté puisse en profiter, en tant que core stable et jouable sur la plateforme Mister FPGA.
 
-## 5. Aspects pratiques et Perspective de l'utilisateur final (10 minutes)
+## 5. Aspects pratiques et Perspective de l'utilisateur final (15 minutes)
 
 ### **Complexité du setup** :
   - Les solutions basées sur **Mister FPGA** sont principalement des projets "Do it yourself", nécessitant une certaine expertise technique pour assembler les différentes pièces et installer les cores. 
@@ -129,22 +130,28 @@
 ### **Public cible** :
   - Les solutions FPGA, notamment Mister, sont destinées aux **utilisateurs exigeants** et passionnés par la fidélité du hardware original. Ces utilisateurs cherchent à retrouver une expérience identique à celle d'une console ou d'une machine d'arcade originale, sans compromis sur la latence ou la précision du rendu.
 
-### **Expérience utilisateur du Mister FPGA** :
-  - Lars, en tant qu’utilisateur final, partagera son expérience avec le Mister FPGA. Il expliquera comment le Mister se compare aux autres solutions d’émulation logicielle en termes de fidélité, de latence, et d’expérience de jeu.
-  - Lars soulignera aussi l'importance de la communauté Mister et la diversité des cores disponibles, offrant une grande variété de systèmes et jeux rétro, jouables avec une précision et une authenticité sans égal.
-  - Biggy parlera de son expérience en tant qu'utilisateur arcade, où la fidélité vs le hardware d'origine prend une grande importance notamment pour la compétition sur les jeux de combat et les shoot em up.
+### **Expérience utilisateur du Mister FPGA (par Lars et Biggie)** :
+  - **Découverte du Mister FPGA** : Lars partagera comment il a découvert la plateforme Mister FPGA en cherchant une solution qui allie fidélité et performance, après avoir testé plusieurs autres solutions d'émulation logicielle.
+  
+  - **Premières impressions** : Au début, il a été frappé par la différence fondamentale entre les solutions FPGA et les émulations logicielles qu'il avait utilisées auparavant, notamment en termes de précision et de latence.
+  
+  - **Différences avec l’émulation** : Lars expliquera comment il teste et compare les deux types de solutions, en soulignant les avantages et inconvénients. Il discutera de l’absence quasi totale de **latence** sur Mister FPGA, comparé à l'émulation où des petits décalages peuvent parfois apparaître, affectant l’expérience utilisateur, en particulier sur des jeux rapides et exigeants.
+  
+  - **Avantages et inconvénients** : En tant qu’utilisateur, Lars mettra en avant les points forts du Mister FPGA, comme la **fidélité de l’expérience** par rapport aux consoles d’origine et la **communauté active** autour du projet. Il mentionnera également certains inconvénients, notamment le **coût élevé** du matériel FPGA et la **complexité du setup** par rapport à des solutions d’émulation plus accessibles.
+
+  - **Focus sur l’arcade (par Biggie)** : Biggie, de la chaîne YouTube Bigkam Gaming, prendra la parole pour parler de l'utilisation du Mister FPGA dans le monde de l'arcade. Il mettra l'accent sur la **connectivité** du Mister FPGA aux systèmes arcade, la **fiabilité** pour les sessions longues ou compétitives, et la **qualité de la reproduction** des jeux d’arcade. Biggie soulignera également l’importance du Mister FPGA pour les joueurs compétitifs de jeux d’arcade, notamment dans les genres comme les shoot 'em ups et les jeux de combat, où la **précision** et **l’absence de lag** sont des critères essentiels.
 
 ### **Pourquoi choisir le Mister FPGA ?** :
-  - Lars évoquera les avantages du Mister FPGA par rapport à d'autres solutions : 
+  - Lars et Biggie évoqueront les avantages du Mister FPGA par rapport à d'autres solutions : 
     - La reproduction fidèle du hardware original, ce qui permet une expérience de jeu authentique.
     - La flexibilité de la plateforme, avec des cores pour une large gamme de consoles et de systèmes d'arcade.
     - Le fait que le Mister FPGA est un projet open-source, avec une communauté active et des mises à jour régulières.
     - Le fait que la plateforme soit robuste en termes de software lifecycle.
-   
+
 ### **Live démo MiSTer FPGA (en démarrant les questions)**
 
 ## 6. Session de Questions-Réponses (10+ minutes)
 - **Modération par Matt** :
   - Matt animera la session de questions-réponses en interagissant avec le public.
   - Les questions peuvent porter sur les aspects techniques du développement FPGA, les différences avec l'émulation logicielle, ou des sujets spécifiques comme le core Q*bert.
-  - Pierco et Lars répondront aux questions du public, et Matt veillera à ce que tous les aspects de la présentation soient bien compris et explorés davantage si nécessaire.
+  - Pierco, Lars et Biggie répondront aux questions du public, et Matt veillera à ce que tous les aspects de la présentation soient bien compris et explorés davantage si nécessaire.
