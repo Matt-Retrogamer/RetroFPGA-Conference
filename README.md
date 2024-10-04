@@ -167,11 +167,11 @@ Bien que le FPGA soit excellent pour la reproduction fidèle de machines rétro 
 
 4. **Simulation (Verilator, Modelsim, Icarus, etc.)**
 
-   - **Test Logiciel** : Avant de porter le core sur le FPGA, Pierco utilise des outils de simulation pour tester le comportement des composants logiques. Des logiciels comme **Verilator**, **Modelsim** ou **Icarus** permettent de simuler le fonctionnement du hardware afin de détecter d’éventuelles erreurs.
+   - **Test Logiciel** : Avant de porter le core sur le FPGA, Pierco utilise des outils de simulation pour **développer** le comportement des composants logiques en **HDL**. Des logiciels comme **Verilator**, **Modelsim** ou **Icarus** permettent de simuler le fonctionnement du hardware afin de détecter d’éventuelles erreurs.
 
 5. **Portage sur MiSTer**
 
-   - **Implémentation sur FPGA** : Après les tests de simulation, Pierco porte le core sur la plateforme **MiSTer FPGA**. C’est à ce stade que le hardware est réellement implémenté sur le FPGA, permettant au système de prendre forme en reproduisant les composants originaux.
+   - **Implémentation sur FPGA** : Après les tests de simulation, Pierco porte le core sur la plateforme **MiSTer FPGA**. Les composants implémentés lors de la phase de simulation son intégrés aux Framework MiSTer, permettant au système d'être exécuté sous forme de core sur la plateforme.
 
 6. **Débogage (Signal Tap)**
 
