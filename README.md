@@ -5,6 +5,7 @@
 ## Table des Matières
 
 1. [Introduction et Objectifs de la Conférence](#1-introduction-et-objectifs-de-la-conférence-2-minutes)
+   - [Contexte Historique du Rétro Gaming et de l'Émulation](#contexte-historique-du-rétro-gaming-et-de-lémulation)
 2. [Lexique et Concepts Clés du FPGA](#2-lexique-et-concepts-clés-du-fpga-3-minutes)
 3. [FPGA vs Émulation Logicielle : Deux Approches, Deux Visions](#3-fpga-vs-émulation-logicielle--deux-approches-deux-visions-15-minutes)
    - [Émulation Logicielle : Une Approche Orientée Utilisateur](#émulation-logicielle--une-approche-orientée-utilisateur)
@@ -12,7 +13,9 @@
    - [FPGA vs Émulation : Synthèse des Différences](#fpga-vs-émulation--synthèse-des-différences)
 4. [Processus de Développement d'un Core FPGA - Exemple de Q*bert](#4-processus-de-développement-dun-core-fpga---exemple-de-qbert-15-minutes)
 5. [Aspects Pratiques et Perspectives de l'Utilisateur Final](#5-aspects-pratiques-et-perspectives-de-lutilisateur-final-15-minutes)
-6. [Session de Questions-Réponses](#6-session-de-questions-réponses-10-minutes)
+6. [Perspectives Futures de la Technologie FPGA dans le Rétro Gaming](#6-perspectives-futures-de-la-technologie-fpga-dans-le-rétro-gaming)
+7. [Conclusion](#7-conclusion)
+8. [Session de Questions-Réponses](#8-session-de-questions-réponses-10-minutes)
 
 ---
 
@@ -29,28 +32,42 @@
 
 La conférence explore comment le FPGA est utilisé pour la préservation du rétro gaming. Nous allons comparer l'approche FPGA à l'émulation logicielle, expliquer le processus de développement d'un core sur FPGA, et discuter des avantages pour les utilisateurs finaux, avec un focus particulier sur le MiSTer FPGA. L'objectif est de montrer comment le FPGA peut fournir une expérience de jeu fidèle et authentique, proche des consoles et machines d'origine.
 
+### Contexte Historique du Rétro Gaming et de l'Émulation
+
+Depuis les débuts du jeu vidéo, les technologies ont évolué rapidement, rendant certains matériels obsolètes et difficiles à trouver. L'émulation logicielle est apparue comme une solution pour **préserver et rendre accessibles** ces jeux anciens. Cependant, elle présente des limitations en termes de fidélité et de performance. L'arrivée des FPGA a ouvert de nouvelles perspectives pour la préservation du rétro gaming, en permettant une **reproduction matérielle précise** des systèmes originaux.
+
 ---
 
 ## 2. Lexique et Concepts Clés du FPGA (3 minutes)
 
 ### Lexique des Termes Essentiels
 
-- **FPGA (Field-Programmable Gate Array)** : Un circuit intégré programmable qui permet de recréer fidèlement le comportement d'un matériel spécifique, comme une console ou une machine d'arcade.
-- **Core** : Un module FPGA qui implémente une machine ou un système spécifique (ex. : un core pour une console ou un jeu d'arcade).
-- **ROM** : Le fichier contenant les données originales du jeu ou de l’application, obtenu en "dumpant" une mémoire ROM physique. Il est injecté dans le core pour être exécuté par le FPGA.
-- **PCB (Printed Circuit Board)** : La carte de circuit imprimé sur laquelle sont montés les composants électroniques d'un système, comme une console ou une machine d'arcade.
-- **CPU/RAM/ROM** : Composants essentiels d'un système :
-  - **CPU (Central Processing Unit)** : Traite les instructions du système.
-  - **RAM (Random Access Memory)** : Stocke les données temporaires pendant le fonctionnement.
-  - **ROM (Read-Only Memory)** : Contient les données immuables du système, comme les jeux ou les programmes.
-- **BRAM (Block RAM)** : Une mémoire rapide intégrée dans les FPGA, utilisée pour stocker des données temporaires. Elle est limitée en taille, mais essentielle pour certaines implémentations matérielles.
-- **DSP Blocks (Digital Signal Processing)** : Blocs de calcul dédiés aux opérations mathématiques spécifiques, notamment dans le traitement de signaux numériques. Ils aident à optimiser le fonctionnement de certains cores, bien qu'ils ne soient pas centraux dans le développement des cores FPGA pour le rétro gaming.
-- **HDL (Hardware Description Language)** : Un langage de description de matériel, comme **Verilog** ou **VHDL**, utilisé pour décrire et modéliser le fonctionnement du hardware dans un FPGA.
+Pour faciliter la compréhension, voici quelques termes clés expliqués simplement :
+
+- **FPGA (Field-Programmable Gate Array)** : Imaginez un **caméléon matériel** capable de se transformer en n'importe quel dispositif électronique. Un FPGA est un circuit intégré programmable qui peut imiter le comportement de différents matériels spécifiques, comme des consoles ou des machines d'arcade.
+
+- **Core** : C'est le **costume** que le caméléon (FPGA) enfile pour devenir un système spécifique. Un core est un module FPGA qui implémente une machine ou un système particulier (ex. : une console ou un jeu d'arcade).
+
+- **ROM** : Une ROM est le fichier qui contient les données originales du jeu ou de l'application, obtenu en "copiant" le contenu d'une mémoire ROM physique. Elle est injectée dans le core pour être exécutée par le FPGA.
+
+- **PCB (Printed Circuit Board)** : C'est la **carte mère** où tous les composants électroniques sont connectés, comme le squelette d'une console ou d'une machine d'arcade.
+
+- **CPU/RAM/ROM** : Les **organes vitaux** du système :
+  - **CPU (Central Processing Unit)** : Le **cerveau** qui traite les instructions.
+  - **RAM (Random Access Memory)** : La **mémoire à court terme** où sont stockées les données temporaires.
+  - **ROM (Read-Only Memory)** : La **mémoire à long terme** qui contient les données permanentes, comme les jeux ou les programmes.
+
+- **BRAM (Block RAM)** : La mémoire intégrée et rapide du FPGA, utilisée pour stocker des données temporaires essentielles au fonctionnement.
+
+- **DSP Blocks (Digital Signal Processing)** : Les **modules spécialisés** du FPGA pour effectuer des calculs mathématiques complexes, notamment pour le traitement de signaux numériques.
+
+- **HDL (Hardware Description Language)** : Le langage utilisé pour donner des instructions FPGA sur la forme qu'il doit prendre. Des langages comme **Verilog** ou **VHDL** permettent de décrire et de modéliser le fonctionnement du hardware dans un FPGA.
+
 - **MRA (MAME ROM Assignment)** : Un format de fichier utilisé dans le projet MiSTer pour organiser les ROMs et définir les configurations de cores arcade.
 
 ### Importance des Termes pour la Conférence
 
-Ce lexique est essentiel pour aligner le vocabulaire entre les différents intervenants et l'audience, afin d’éviter toute confusion pendant la présentation. Les termes comme "core", "FPGA", "HDL" et "ROM" seront fréquemment utilisés pour expliquer les processus de développement et de portage des systèmes sur MiSTer FPGA.
+Ce lexique est essentiel pour aligner le vocabulaire entre les différents intervenants et l'audience, afin d’éviter toute confusion pendant la présentation. Les termes seront expliqués de manière accessible au fur et à mesure.
 
 ---
 
@@ -60,7 +77,7 @@ Ce lexique est essentiel pour aligner le vocabulaire entre les différents inter
 
 #### Explication du Concept
 
-L’émulation logicielle se concentre sur la **reproduction du résultat final** perçu par l’utilisateur. Le développeur d’un émulateur ne cherche pas nécessairement à recréer le hardware, mais plutôt à s'assurer que le jeu ou le système **fonctionne visuellement et auditivement de la même manière** que l'original, du point de vue de l’utilisateur.
+L'émulation logicielle peut être comparée à un **imitateur** qui reproduit les chansons d'un artiste sans forcément connaître sa technique vocale. Elle se concentre sur la **reproduction du résultat final** perçu par l’utilisateur. Le développeur d’un émulateur ne cherche pas nécessairement à recréer le hardware, mais plutôt à s'assurer que le jeu ou le système **fonctionne visuellement et auditivement de la même manière** que l'original, du point de vue de l’utilisateur.
 
 #### Processus de Développement
 
@@ -78,7 +95,7 @@ Dans le cas de l’émulation logicielle de la **Super Nintendo**, le développe
 
 #### Explication du Concept
 
-Le FPGA vise à reproduire **fidèlement le hardware original** d'une machine de jeu ou d'un système d'arcade, au niveau des composants physiques. Cette approche repose sur la recréation du comportement exact de chaque élément du hardware (comme les processeurs, les circuits logiques et les mémoires), pour que la machine se comporte **comme si elle était l'originale**.
+Le FPGA est comme un **artisan** qui recrée une œuvre d'art en respectant chaque détail et chaque technique de l'artiste original. Il vise à reproduire **fidèlement le hardware original** d'une machine de jeu ou d'un système d'arcade, au niveau des composants physiques. Cette approche repose sur la recréation du comportement exact de chaque élément du hardware (comme les processeurs, les circuits logiques et les mémoires), pour que la machine se comporte **comme si elle était l'originale**.
 
 Cependant, bien que le FPGA permette de viser une reproduction exacte (*cycle accurate*) du hardware, il est également possible de produire des implémentations qui ne sont pas totalement fidèles. Par exemple, certaines machines recréées en FPGA peuvent tourner plus rapidement que les originales ou produire des sons légèrement différents en fonction des limitations ou des optimisations appliquées.
 
@@ -208,13 +225,42 @@ Bien que le FPGA soit excellent pour la reproduction fidèle de machines rétro 
 - **Projet Open-Source** : Bénéficie d'une communauté active et de mises à jour régulières.
 - **Robustesse Logicielle** : Plateforme durable avec un cycle de vie logiciel solide.
 
-### Démonstration en Direct du MiSTer FPGA
+---
 
-- **Initiation de la Session de Questions** : Une démonstration en direct du MiSTer FPGA sera effectuée, permettant au public de voir concrètement le système en action.
+## 6. Perspectives Futures de la Technologie FPGA dans le Rétro Gaming
+
+### Évolutions Possibles
+
+- **Amélioration des FPGA** : Augmentation des capacités pour reproduire des systèmes plus modernes.
+- **Accessibilité** : Réduction des coûts avec la démocratisation de la technologie.
+- **Communauté Grandissante** : Plus de développeurs contribuant à la préservation.
+
+### Impact Potentiel sur la Préservation Numérique
+
+- **Préservation Précise** : Conservation exacte des systèmes originaux.
+- **Éducation** : Outils pour l'apprentissage et la recherche en informatique et électronique.
+- **Culture** : Maintien du patrimoine vidéoludique pour les générations futures.
 
 ---
 
-## 6. Session de Questions-Réponses (10+ minutes)
+## 7. Conclusion
+
+### Résumé des Points Clés
+
+- **Compréhension des Deux Approches** : FPGA vs Émulation Logicielle et leurs implications sur la fidélité et la performance.
+- **Processus de Développement** : Aperçu détaillé de la création d'un core FPGA, illustré par l'exemple de *Q*bert*.
+- **Expérience Utilisateur** : Témoignages mettant en avant les avantages du MiSTer FPGA pour les passionnés et les joueurs compétitifs.
+- **Perspectives Futures** : Importance de la technologie FPGA dans la préservation du rétro gaming et son potentiel pour l'avenir.
+
+### Pour Aller Plus Loin
+
+- **Impliquer le Public** : Encouragement à rejoindre la communauté, à essayer le MiSTer FPGA, ou à contribuer au développement des cores.
+- **Préservation Culturelle** : Insistance sur l'importance de préserver le patrimoine vidéoludique pour les générations futures.
+- **Continuer l'Échange** : Invitation à poursuivre les discussions et les explorations dans ce domaine passionnant.
+
+---
+
+## 8. Session de Questions-Réponses (10+ minutes)
 
 ### Modération par Matt
 
@@ -222,6 +268,7 @@ Bien que le FPGA soit excellent pour la reproduction fidèle de machines rétro 
 - **Thématiques des Questions** :
   - **Aspects Techniques** : Développement FPGA, outils utilisés, défis rencontrés.
   - **Comparaison avec l'Émulation Logicielle** : Avantages, inconvénients, cas d'usage spécifiques.
+  - **Perspectives Futures** : Évolutions technologiques, impact sur la préservation du rétro gaming.
   - **Sujets Spécifiques** : Par exemple, le développement du core *Q*bert*.
 - **Réponses des Intervenants** : Pierco, Lars et Biggie apporteront leurs expertises respectives pour répondre aux questions et approfondir les sujets abordés.
 - **Objectif** : Assurer que tous les aspects de la présentation sont bien compris et explorer davantage les points d'intérêt du public.
