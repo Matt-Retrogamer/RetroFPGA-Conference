@@ -4,12 +4,12 @@
 
 ## Table des matières
 1. [Introduction et Objectifs de la Conférence](#1-introduction-et-objectifs-de-la-conférence-2-minutes)
-2. [Lexique et Concepts Clés du FPGA](#2-lexique-et-concepts-clés-du-fpga-5-minutes)
+2. [Lexique et Concepts Clés du FPGA](#2-lexique-et-concepts-clés-du-fpga-3-minutes)
 3. [FPGA vs Émulation Logicielle : Deux approches, Deux visions](#3-fpga-vs-émulation-logicielle--deux-approches-deux-visions-15-minutes)
-   - [Émulation Logicielle : Une approche orientée utilisateur](#-émulation-logicielle--une-approche-orientée-utilisateur)
-   - [FPGA : Une approche orientée hardware](#-fpga--une-approche-orientée-hardware)
-   - [Différences entre l’émulation logicielle et le FPGA](#-différences-entre-lémulation-logicielle-et-le-fpga)
-4. [Processus de développement d'un Core FPGA - Exemple de Q*bert](#4-processus-de-développement-dun-core-fpga--exemple-de-qbert-15-minutes)
+   - [Émulation Logicielle : Une approche orientée utilisateur](#émulation-logicielle--une-approche-orientée-utilisateur)
+   - [FPGA : Une approche orientée hardware](#fpga--une-approche-orientée-hardware)
+   - [FPGA vs Émulation : Synthèse des Différences](#fpga-vs-émulation--synthèse-des-différences)
+4. [Processus de développement d'un Core FPGA - Exemple de Q*bert](#4-processus-de-développement-dun-core-fpga---exemple-de-qbert-15-minutes)
 5. [Aspects pratiques et Perspective de l'utilisateur final](#5-aspects-pratiques-et-perspective-de-lutilisateur-final-15-minutes)
 6. [Session de Questions-Réponses](#6-session-de-questions-réponses-10-minutes)
 
@@ -74,7 +74,7 @@
   - **Exemple de la Super Nintendo en FPGA** :
     Dans le cas de la **Super Nintendo** implémentée sur FPGA, chaque composant du hardware est recréé, y compris le CPU, les circuits graphiques et les contrôleurs. L'objectif est de reproduire le fonctionnement original de la console de manière exacte (cycle accurate), mais il est aussi possible que certains cores FPGA ne respectent pas totalement ces standards, notamment dans les systèmes où des optimisations ou des ajustements sont appliqués.
 
-### - **Différences entre l’émulation logicielle et le FPGA** :
+### - **FPGA vs Émulation : Synthèse des Différences** :
   - **Approche matérielle vs approche logicielle** :
     - L'émulation logicielle se concentre sur la reproduction du **résultat final** (graphismes, sons), tandis que le FPGA tente de reproduire fidèlement **chaque composant du hardware** original. L’approche FPGA est donc une reproduction idéalement exacte au niveau matériel (cycle accurate), tandis que l’émulation peut être une approximation.
   
