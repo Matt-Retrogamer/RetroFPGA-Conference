@@ -57,6 +57,8 @@ Pour faciliter la compréhension, voici quelques termes clés expliqués simplem
   - **RAM (Random Access Memory)** : La **mémoire à court terme** où sont stockées les données temporaires.
   - **ROM (Read-Only Memory)** : La **mémoire à long terme** qui contient les données permanentes, comme les jeux ou les programmes.
 
+- **ALM (Adaptive Logic Modules)** : Nombre de blocks logiques programmables sur le FPGA (41500 sur le MiSTer FPGA).
+
 - **BRAM (Block RAM)** : La mémoire intégrée et rapide du FPGA, utilisée pour stocker des données temporaires essentielles au fonctionnement.
 
 - **DSP Blocks (Digital Signal Processing)** : Les **modules spécialisés** du FPGA pour effectuer des calculs mathématiques complexes, notamment pour le traitement de signaux numériques.
