@@ -1,4 +1,4 @@
-# Plan de la Conférence : **FPGA et Rétro Gaming : Préserver le Passé avec Précision**
+# **FPGA et Rétro Gaming : Préserver le Passé avec Précision**
 
 ![Logo de la Conférence](imgs/SGF.png)
 
